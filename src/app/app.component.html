@@ -1,0 +1,13 @@
+<main class="map-shell">
+  <header class="map-heading">
+    <p class="eyebrow">ArcGIS Maps SDK for JavaScript</p>
+    <h1>AHN &amp; NWB</h1>
+    <p class="description">Hoogtebestand en hectometerpunten van Nederland.</p>
+  </header>
+
+  @if (configurationError) {
+    <p class="configuration-error" role="alert">{{ configurationError }}</p>
+  }
+
+  <div #mapView class="map-view" aria-label="Kaart met NWB-hectometerpunten"></div>
+</main>

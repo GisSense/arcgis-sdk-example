@@ -1,0 +1,33 @@
+layers:
+  - type: ImageryLayer
+    title: AHN3 hoogtebestand
+    url: https://ahn.arcgisonline.nl/arcgis/rest/services/Hoogtebestand/AHN3_r/ImageServer
+    visible: true
+    opacity: 0.65
+
+  - type: FeatureLayer
+    title: NWB - Hectopunten
+    url: https://services.arcgis.com/nSZVuSZjHpEZZbRo/arcgis/rest/services/NWB_Hectometerpaaltjes/FeatureServer/0
+    visible: true
+    outFields:
+      - "*"
+    popupEnabled: true
+    popupTemplate:
+      title: Hectometer {HECTOMTRNG}
+      content:
+        - type: fields
+          fieldInfos:
+            - fieldName: HECTOMTRNG
+              label: Hectometerwaarde
+            - fieldName: AFSTAND
+              label: Referentieafstand
+            - fieldName: WVK_ID
+              label: Wegvak-ID
+            - fieldName: WVK_BEGDAT
+              label: Aanlegdatum wegvak
+              format:
+                dateFormat: short-date
+            - fieldName: ZIJDE
+              label: Rijbaanzijde
+            - fieldName: DVK_LETTER
+              label: DVK-code
